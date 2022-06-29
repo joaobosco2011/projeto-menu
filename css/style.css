@@ -44,15 +44,46 @@ body {
 
 .menu li {
     list-style: none;
+    position: relative;
 }
 
 .menu li a {
+    display: block;
     padding: 17px;
     color: white;
     text-decoration: none;
     font-size: 14px;
 }
 
-.menu li a:hover {
+.menu li:hover {
     background: #1d52ff;
+}
+
+/* Quando o mouse passa sobre a li ela modifica o componente que neste caso é o submenu */
+.menu > li:hover > .submenu,
+.submenu > li:hover > .submenu  {
+    display: block;
+}
+
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    background-color: #1d52ff;
+    min-width: 100%;
+}
+
+.submenu li:hover {
+    background-color: #174fbe;
+    border: 2px solid white;
+}
+
+.submenu li {
+    position: relative;
+}
+
+.submenu li .submenu {
+    top: 0;
+    left: 100%;
 }
